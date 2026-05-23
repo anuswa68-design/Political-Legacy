@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jyothi Rechanna — Political Legacy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B1A; --saffron-light: #FF8C42;
+    --deep-navy: #0A0E1A; --navy: #0F1626; --navy-mid: #1A2340;
+    --gold: #D4A017; --gold-light: #F0C040;
+    --cream: #F5ECD7; --text-dim: #8A8FA8; --green-BJP: #138808;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--deep-navy); color: var(--cream); font-family: 'Crimson Pro', serif; overflow-x: hidden; cursor: none; }
+  .cursor { position: fixed; width: 12px; height: 12px; background: var(--saffron); border-radius: 50%; pointer-events: none; z-index: 9999; mix-blend-mode: screen; transform: translate(-50%,-50%); transition: transform 0.1s; }
+  .cursor-ring { position: fixed; width: 36px; height: 36px; border: 1px solid rgba(255,107,26,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: all 0.15s ease; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; background: linear-gradient(to bottom,rgba(10,14,26,0.95),transparent); backdrop-filter: blur(2px); }
+  .nav-logo { font-family: 'Playfair Display',serif; font-size: 1.1rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'DM Mono',monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--saffron); }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; position: relative; overflow: hidden; padding: 0 4rem; padding-top: 80px; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%,rgba(255,107,26,0.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(212,160,23,0.06) 0%,transparent 50%); }
+  .hero-lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.02) 80px); pointer-events: none; }
+  .hero-left { position: relative; z-index: 2; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(255,107,26,0.12); border: 1px solid rgba(255,107,26,0.25); padding: 0.45rem 1rem; border-radius: 2px; font-family: 'DM Mono',monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--saffron); margin-bottom: 2rem; animation: fadeSlideUp 0.8s ease both; }
+  .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--saffron); animation: pulse 2s infinite; }
+  .hero-name { font-family: 'Playfair Display',serif; font-size: clamp(3.5rem,6vw,6rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; animation: fadeSlideUp 0.8s 0.15s ease both; }
+  .hero-name span { color: var(--saffron); display: block; font-style: italic; }
+  .hero-title { margin-top: 1.5rem; font-size: 1.3rem; font-weight: 300; color: var(--gold-light); letter-spacing: 0.04em; animation: fadeSlideUp 0.8s 0.3s ease both; }
+  .hero-desc { margin-top: 1.5rem; max-width: 480px; font-size: 1.05rem; line-height: 1.8; color: rgba(245,236,215,0.7); animation: fadeSlideUp 0.8s 0.45s ease both; }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 3rem; animation: fadeSlideUp 0.8s 0.6s ease both; }
+  .stat-num { font-family: 'Playfair Display',serif; font-size: 2.5rem; font-weight: 700; color: var(--gold-light); display: block; }
+  .stat-label { font-family: 'DM Mono',monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.25rem; display: block; }
+  .hero-cta { display: flex; gap: 1rem; margin-top: 2.5rem; animation: fadeSlideUp 0.8s 0.75s ease both; }
+  .btn-primary { background: var(--saffron); color: white; border: none; padding: 0.9rem 2rem; font-family: 'DM Mono',monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: none; text-decoration: none; transition: background 0.3s,transform 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--saffron-light); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--cream); border: 1px solid rgba(245,236,215,0.3); padding: 0.9rem 2rem; font-family: 'DM Mono',monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: none; text-decoration: none; transition: border-color 0.3s,color 0.3s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-right { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; animation: fadeSlideUp 0.8s 0.3s ease both; }
+  .channel-card { background: rgba(26,35,64,0.6); border: 1px solid rgba(255,107,26,0.2); border-radius: 4px; padding: 2.5rem; width: 380px; backdrop-filter: blur(10px); position: relative; }
+  .channel-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg,var(--saffron),var(--gold)); }
+  .channel-avatar { width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 3px solid var(--saffron); margin-bottom: 1.2rem; }
+  .channel-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .channel-name { font-family: 'Playfair Display',serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .channel-handle { font-family: 'DM Mono',monospace; font-size: 0.7rem; color: var(--saffron); letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+  .channel-metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; }
+  .metric-item { text-align: center; }
+  .metric-val { font-family: 'Playfair Display',serif; font-size: 1.5rem; font-weight: 700; color: var(--gold-light); display: block; }
+  .metric-key { font-family: 'DM Mono',monospace; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.2rem; display: block; }
+  .yt-badge { display: flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'DM Mono',monospace; font-size: 0.65rem; color: var(--text-dim); }
+  section { padding: 7rem 4rem; position: relative; }
+  .section-tag { font-family: 'DM Mono',monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display',serif; font-size: clamp(2.2rem,4vw,3.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1rem; }
+  .section-subtitle { font-size: 1.1rem; color: rgba(245,236,215,0.6); max-width: 560px; line-height: 1.8; }
+  .about-section { background: var(--navy); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; margin-top: 4rem; }
+  .about-image-container { position: relative; }
+  .about-image-frame { width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg,var(--navy-mid),rgba(255,107,26,0.15)); border: 1px solid rgba(255,107,26,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .about-image-frame img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .about-image-label { position: absolute; bottom: 1.5rem; left: 1.5rem; font-family: 'DM Mono',monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--saffron); padding: 0.4rem 0.8rem; color: white; }
+  .accent-box { position: absolute; top: -1.5rem; right: -1.5rem; width: 120px; height: 120px; border: 2px solid var(--gold); opacity: 0.3; z-index: -1; }
+  .about-lead { font-size: 1.6rem; font-weight: 300; line-height: 1.6; color: var(--cream); margin-bottom: 2rem; }
+  .about-lead em { color: var(--saffron); font-style: italic; }
+  .about-body { font-size: 1.05rem; line-height: 1.9; color: rgba(245,236,215,0.65); margin-bottom: 1.5rem; }
+  .affiliation-list { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .affiliation-tag { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,107,26,0.1); border: 1px solid rgba(255,107,26,0.2); padding: 0.45rem 1rem; font-family: 'DM Mono',monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--saffron-light); }
+  .affiliation-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-BJP); }
+  .videos-section { background: var(--deep-navy); }
+  .videos-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1.5rem; }
+  .video-card { background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.06); overflow: hidden; transition: transform 0.3s,border-color 0.3s; cursor: pointer; }
+  .video-card:hover { transform: translateY(-4px); border-color: rgba(255,107,26,0.3); }
+  .video-card:hover .play-overlay { opacity: 1; }
+  .video-thumb { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--navy); }
+  .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .video-card:hover .video-thumb img { transform: scale(1.05); }
+  .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(10,14,26,0.6); opacity: 0; transition: opacity 0.3s; }
+  .play-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--saffron); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .video-info { padding: 1.2rem; }
+  .video-title { font-family: 'Playfair Display',serif; font-size: 0.95rem; line-height: 1.4; margin-bottom: 0.75rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .video-meta { display: flex; justify-content: space-between; align-items: center; }
+  .video-stats { display: flex; gap: 1rem; font-family: 'DM Mono',monospace; font-size: 0.6rem; color: var(--text-dim); }
+  .video-date { font-family: 'DM Mono',monospace; font-size: 0.6rem; color: var(--text-dim); }
+  .view-count { color: var(--gold-light); }
+  .highlight-bar { background: var(--saffron); padding: 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; position: relative; }
+  .highlight-bar::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--gold); }
+  .highlight-quote { font-family: 'Playfair Display',serif; font-size: 1.6rem; font-style: italic; font-weight: 400; color: white; max-width: 700px; }
+  .highlight-attr { font-family: 'DM Mono',monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .initiatives-section { background: var(--navy); }
+  .initiatives-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; margin-top: 4rem; border: 1px solid rgba(255,255,255,0.06); }
+  .initiative-card { padding: 2.5rem; background: var(--navy-mid); border-right: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.3s; }
+  .initiative-card:hover { background: rgba(26,35,64,0.9); }
+  .initiative-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .initiative-title { font-family: 'Playfair Display',serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--cream); }
+  .initiative-desc { font-size: 0.95rem; line-height: 1.7; color: rgba(245,236,215,0.55); }
+  .initiative-tag { margin-top: 1.2rem; font-family: 'DM Mono',monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--saffron); }
+  footer { background: #050810; padding: 4rem 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .footer-logo { font-family: 'Playfair Display',serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem; }
+  .footer-tagline { font-size: 0.95rem; color: var(--text-dim); line-height: 1.7; max-width: 250px; }
+  .footer-col-title { font-family: 'DM Mono',monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--saffron); margin-bottom: 1.2rem; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.6rem; }
+  .footer-links a { font-size: 0.95rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; font-family: 'DM Mono',monospace; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+  @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.4); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-bar { background: rgba(255,107,26,0.08); border-top: 1px solid rgba(255,107,26,0.15); border-bottom: 1px solid rgba(255,107,26,0.15); padding: 0.8rem 0; overflow: hidden; }
+  .marquee-inner { display: flex; white-space: nowrap; animation: marquee 30s linear infinite; }
+  .marquee-item { font-family: 'DM Mono',monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--saffron); padding: 0 3rem; display: flex; align-items: center; gap: 1rem; }
+  .marquee-sep { color: var(--gold); opacity: 0.5; }
+  .section-header { max-width: 600px; }
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <div class="nav-logo">Jyothi Rechanna</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#initiatives">Initiatives</a></li>
+    <li><a href="https://www.youtube.com/@jyothirechanna" target="_blank">YouTube &#8599;</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-left">
+    <div class="hero-badge"><span class="badge-dot"></span>BJP &middot; Karnataka &middot; Mysuru</div>
+    <h1 class="hero-name">Jyothi<span>Rechanna</span></h1>
+    <p class="hero-title">Political Leader &amp; Public Servant</p>
+    <p class="hero-desc">A dedicated voice for Karnataka&#39;s people &mdash; championing BJP values, wildlife conservation, and grassroots development across Mysuru and beyond.</p>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">51</span><span class="stat-label">Videos</span></div>
+      <div class="stat-item"><span class="stat-num">35.8K</span><span class="stat-label">Total Views</span></div>
+      <div class="stat-item"><span class="stat-num">131</span><span class="stat-label">Subscribers</span></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#videos" class="btn-primary">Watch Videos</a>
+      <a href="#about" class="btn-outline">Know More</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="channel-card">
+      <div class="channel-avatar">
+        <img src="https://yt3.ggpht.com/ytc/AIdro_nnIRUmuuO6W_tIk9D-YmL6t0uNruYgC8TeTjvYqXKl6c9FXiAP47jKyuLrHos6hE_DZw=s240-c-k-c0x00ffffff-no-rj" alt="Jyothi Rechanna">
+      </div>
+      <div class="channel-name">Jyothi Rechanna</div>
+      <div class="channel-handle">@jyothirechanna &middot; India &#127470;&#127475;</div>
+      <div class="channel-metrics">
+        <div class="metric-item"><span class="metric-val">131</span><span class="metric-key">Subscribers</span></div>
+        <div class="metric-item"><span class="metric-val">51</span><span class="metric-key">Videos</span></div>
+        <div class="metric-item"><span class="metric-val">35.8K</span><span class="metric-key">Views</span></div>
+      </div>
+      <div class="yt-badge"><span style="color:#FF0000">&#9654;</span> YouTube &middot; Active Since Nov 2023</div>
+    </div>
+  </div>
+</section>
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span class="marquee-item">BJP Karnataka <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Mysuru Development <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Wildlife Conservation <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">National Zoo Conference 2023 <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Karnataka Politics <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Public Service <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">BJP Karnataka <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Mysuru Development <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Wildlife Conservation <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">National Zoo Conference 2023 <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Karnataka Politics <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">Public Service <span class="marquee-sep">&#10022;</span></span>
+  </div>
+</div>
+<section class="about-section" id="about">
+  <div class="section-header reveal">
+    <div class="section-tag">01 / Profile</div>
+    <h2 class="section-title">Rooted in Karnataka,<br>Driven by Purpose</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-image-container reveal">
+      <div class="about-image-frame">
+        <img src="https://yt3.ggpht.com/ytc/AIdro_nnIRUmuuO6W_tIk9D-YmL6t0uNruYgC8TeTjvYqXKl6c9FXiAP47jKyuLrHos6hE_DZw=s800-c-k-c0x00ffffff-no-rj" alt="Jyothi Rechanna" onerror="this.style.display='none'">
+        <div class="about-image-label">Karnataka &middot; Bharat</div>
+      </div>
+      <div class="accent-box"></div>
+    </div>
+    <div class="about-content reveal">
+      <p class="about-lead">A <em>committed BJP leader</em> working tirelessly for the people of Karnataka &mdash; especially the citizens of Mysuru.</p>
+      <p class="about-body">Jyothi Rechanna has emerged as a dedicated political figure within the Bharatiya Janata Party in Karnataka, championing the values of environmental conservation and grassroots development. With deep ties to the Mysuru region, she has consistently advocated for policies that uplift communities while contributing to Karnataka&#39;s progress.</p>
+      <p class="about-body">Her digital presence &mdash; documented through her YouTube channel &mdash; reflects a commitment to transparency and outreach, sharing on-the-ground political activities, wildlife engagements, and interactions with senior BJP leadership including former Chief Minister B.S. Yediyurappa.</p>
+      <div class="affiliation-list">
+        <span class="affiliation-tag"><span class="dot"></span>BJP Karnataka</span>
+        <span class="affiliation-tag"><span class="dot"></span>Mysuru District</span>
+        <span class="affiliation-tag"><span class="dot"></span>Wildlife Advocacy</span>
+        <span class="affiliation-tag"><span class="dot"></span>Public Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="highlight-bar">
+  <div class="highlight-quote">&ldquo;Serving Karnataka&#39;s people is not a duty &mdash; it is a calling rooted in love for this land and its people.&rdquo;</div>
+  <div class="highlight-attr">&mdash; Jyothi Rechanna</div>
+</div>
+<section class="videos-section" id="videos">
+  <div class="section-header reveal">
+    <div class="section-tag">02 / YouTube &middot; Live Data</div>
+    <h2 class="section-title">Featured<br>Videos</h2>
+    <p class="section-subtitle">Selected content from the official YouTube channel, pulled via API.</p>
+  </div>
+  <div class="videos-grid" id="videosGrid"></div>
+  <div style="text-align:center;margin-top:3rem;" class="reveal">
+    <a href="https://www.youtube.com/@jyothirechanna" target="_blank" class="btn-outline">View All 51 Videos on YouTube &#8599;</a>
+  </div>
+</section>
+<section class="initiatives-section" id="initiatives">
+  <div class="section-header reveal">
+    <div class="section-tag">03 / Focus Areas</div>
+    <h2 class="section-title">Areas of<br>Political Focus</h2>
+  </div>
+  <div class="initiatives-grid reveal">
+    <div class="initiative-card">
+      <span class="initiative-icon">&#128024;</span>
+      <div class="initiative-title">Wildlife &amp; Zoo Conservation</div>
+      <div class="initiative-desc">Active involvement in Mysuru Zoo affairs and the National Zoo Directors Conference 2023. Advocacy for wildlife conservation directly aligns politics with environmental responsibility.</div>
+      <div class="initiative-tag">National Zoo Conference Host</div>
+    </div>
+    <div class="initiative-card">
+      <span class="initiative-icon">&#127963;</span>
+      <div class="initiative-title">BJP Karnataka Politics</div>
+      <div class="initiative-desc">Deeply integrated with BJP&#39;s Karnataka unit &mdash; maintaining ties with senior leadership including BSY and State President Vijendra Singh, participating in party activities and state-level campaigns.</div>
+      <div class="initiative-tag">Active Party Member</div>
+    </div>
+    <div class="initiative-card">
+      <span class="initiative-icon">&#127750;</span>
+      <div class="initiative-title">Mysuru Development</div>
+      <div class="initiative-desc">Representing Mysuru&#39;s aspirations &mdash; fostering a vision of modern Mysuru that honours its royal heritage while driving forward infrastructure and civic progress.</div>
+      <div class="initiative-tag">Mysuru City Focus</div>
+    </div>
+    <div class="initiative-card">
+      <span class="initiative-icon">&#128241;</span>
+      <div class="initiative-title">Digital Outreach</div>
+      <div class="initiative-desc">Pioneering transparent political communication through YouTube &mdash; 51 videos, 35,800+ total views, reaching constituents directly with ground-level content and activities.</div>
+      <div class="initiative-tag">35,877 Total Views</div>
+    </div>
+    <div class="initiative-card">
+      <span class="initiative-icon">&#129309;</span>
+      <div class="initiative-title">Senior Leadership Engagement</div>
+      <div class="initiative-desc">Regular interactions with senior BJP leaders, including former CM B.S. Yediyurappa and State President Vijendra Singh, reinforcing grassroots connections to national party leadership.</div>
+      <div class="initiative-tag">BSY &middot; Vijendra Singh</div>
+    </div>
+    <div class="initiative-card">
+      <span class="initiative-icon">&#127470;&#127475;</span>
+      <div class="initiative-title">National Pride &amp; Culture</div>
+      <div class="initiative-desc">Active participation in national celebrations and events &mdash; affirming commitment to India&#39;s cultural identity and national pride across Karnataka&#39;s communities.</div>
+      <div class="initiative-tag">Cultural Advocacy</div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Jyothi Rechanna</div>
+      <p class="footer-tagline">BJP Political Leader, Karnataka. Committed to wildlife, public service, and Mysuru&#39;s development.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#initiatives">Focus Areas</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://www.youtube.com/@jyothirechanna" target="_blank">YouTube Channel &#8599;</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; 2024 Jyothi Rechanna &middot; Political Legacy Website</div>
+    <div><span style="color:#FF0000">&#9654;</span> Data sourced via YouTube API through Composio</div>
+  </div>
+</footer>
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+    setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
+  });
+  const videosData = [
+    { id: "MUq7ZMym8AU", title: "With BSY Appaji - BJP Karnataka", views: 296, likes: 19, date: "2024-01-26", thumb: "https://i.ytimg.com/vi/MUq7ZMym8AU/hqdefault.jpg" },
+    { id: "t1LfV0-VUYw", title: "Cheetahs Cubs - Zoo Wildlife Karnataka", views: 89, likes: 16, date: "2024-01-24", thumb: "https://i.ytimg.com/vi/t1LfV0-VUYw/hqdefault.jpg" },
+    { id: "Nd5IwHLj3s4", title: "National Conference for Zoo Directors - Mysuru Zoo", views: 1890, likes: 45, date: "2024-01-02", thumb: "https://i.ytimg.com/vi/Nd5IwHLj3s4/hqdefault.jpg" },
+    { id: "kxCq1PmJCQU", title: "Honoring Excellence: Felicitating Achievers at National Zoo Conference", views: 1240, likes: 32, date: "2024-01-02", thumb: "https://i.ytimg.com/vi/kxCq1PmJCQU/hqdefault.jpg" },
+    { id: "XPsBQcxSJjw", title: "BJP State President Vijendra Sir - Karnataka", views: 870, likes: 29, date: "2024-01-06", thumb: "https://i.ytimg.com/vi/XPsBQcxSJjw/hqdefault.jpg" }
+  ];
+  videosData.sort((a, b) => b.views - a.views);
+  const grid = document.getElementById('videosGrid');
+  videosData.forEach((v, i) => {
+    const card = document.createElement('div');
+    card.className = 'video-card reveal';
+    card.style.transitionDelay = (i * 0.1) + 's';
+    card.innerHTML = '<div class="video-thumb"><img src="' + v.thumb + '" alt="' + v.title + '" loading="lazy" onerror="this.parentElement.style.background='#1A2340'"><div class="play-overlay"><div class="play-btn">&#9654;</div></div></div><div class="video-info"><div class="video-title">' + v.title + '</div><div class="video-meta"><div class="video-stats"><span class="view-count">&#128065; ' + v.views.toLocaleString() + '</span><span>&#10084; ' + v.likes + '</span></div><div class="video-date">' + v.date + '</div></div></div>';
+    card.addEventListener('click', () => window.open('https://www.youtube.com/watch?v=' + v.id, '_blank'));
+    grid.appendChild(card);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
