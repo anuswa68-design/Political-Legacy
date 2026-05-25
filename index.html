@@ -71,7 +71,7 @@
   .affiliation-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-BJP); }
   .videos-section { background: var(--deep-navy); }
   .videos-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1.5rem; }
-  .video-card { background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.06); overflow: hidden; transition: transform 0.3s,border-color 0.3s; cursor: pointer; }
+  .video-card { background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.06); overflow: hidden; transition: transform 0.3s,border-color 0.3s; cursor: none; }
   .video-card:hover { transform: translateY(-4px); border-color: rgba(255,107,26,0.3); }
   .video-card:hover .play-overlay { opacity: 1; }
   .video-thumb { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--navy); }
@@ -107,6 +107,7 @@
   .footer-links a { font-size: 0.95rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--cream); }
   .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; font-family: 'DM Mono',monospace; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+  .footer-yt { display: flex; align-items: center; gap: 0.5rem; color: var(--text-dim); }
   @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.4); } }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -120,29 +121,42 @@
 </style>
 </head>
 <body>
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
+
 <nav>
   <div class="nav-logo">Jyothi Rechanna</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#initiatives">Initiatives</a></li>
-    <li><a href="https://www.youtube.com/@jyothirechanna" target="_blank">YouTube &#8599;</a></li>
+    <li><a href="https://www.youtube.com/@jyothirechanna" target="_blank">YouTube ↗</a></li>
   </ul>
 </nav>
+
+<!-- Hero -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="hero-left">
-    <div class="hero-badge"><span class="badge-dot"></span>BJP &middot; Karnataka &middot; Mysuru</div>
+    <div class="hero-badge"><span class="badge-dot"></span>BJP · Karnataka · Mysuru</div>
     <h1 class="hero-name">Jyothi<span>Rechanna</span></h1>
-    <p class="hero-title">Political Leader &amp; Public Servant</p>
-    <p class="hero-desc">A dedicated voice for Karnataka&#39;s people &mdash; championing BJP values, wildlife conservation, and grassroots development across Mysuru and beyond.</p>
+    <p class="hero-title">Political Leader & Public Servant</p>
+    <p class="hero-desc">A dedicated voice for Karnataka's people — championing BJP values, wildlife conservation, and grassroots development across Mysuru and beyond.</p>
     <div class="hero-stats">
-      <div class="stat-item"><span class="stat-num">51</span><span class="stat-label">Videos</span></div>
-      <div class="stat-item"><span class="stat-num">35.8K</span><span class="stat-label">Total Views</span></div>
-      <div class="stat-item"><span class="stat-num">131</span><span class="stat-label">Subscribers</span></div>
+      <div class="stat-item">
+        <span class="stat-num">51</span>
+        <span class="stat-label">Videos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">35.8K</span>
+        <span class="stat-label">Total Views</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">131</span>
+        <span class="stat-label">Subscribers</span>
+      </div>
     </div>
     <div class="hero-cta">
       <a href="#videos" class="btn-primary">Watch Videos</a>
@@ -152,35 +166,42 @@
   <div class="hero-right">
     <div class="channel-card">
       <div class="channel-avatar">
-        <img src="https://yt3.ggpht.com/ytc/AIdro_nnIRUmuuO6W_tIk9D-YmL6t0uNruYgC8TeTjvYqXKl6c9FXiAP47jKyuLrHos6hE_DZw=s240-c-k-c0x00ffffff-no-rj" alt="Jyothi Rechanna">
+        <img src="https://yt3.ggpht.com/ytc/AIdro_nnIRUmuuO6W_tIk9D-YmL6t0uNruYgC8TeTjvYqXKl6c9FXiAP47jKyuLrHos6hE_DZw=s240-c-k-c0x00ffffff-no-rj" alt="Jyothi Rechanna" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22><rect fill=%22%23FF6B1A%22 width=%2280%22 height=%2280%22/><text x=%2240%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22white%22>JR</text></svg>'">
       </div>
       <div class="channel-name">Jyothi Rechanna</div>
-      <div class="channel-handle">@jyothirechanna &middot; India &#127470;&#127475;</div>
+      <div class="channel-handle">@jyothirechanna · India 🇮🇳</div>
       <div class="channel-metrics">
         <div class="metric-item"><span class="metric-val">131</span><span class="metric-key">Subscribers</span></div>
         <div class="metric-item"><span class="metric-val">51</span><span class="metric-key">Videos</span></div>
         <div class="metric-item"><span class="metric-val">35.8K</span><span class="metric-key">Views</span></div>
       </div>
-      <div class="yt-badge"><span style="color:#FF0000">&#9654;</span> YouTube &middot; Active Since Nov 2023</div>
+      <div class="yt-badge">
+        <span style="color:#FF0000">▶</span>
+        YouTube Channel · Active Since Nov 2023
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Marquee -->
 <div class="marquee-bar">
   <div class="marquee-inner">
-    <span class="marquee-item">BJP Karnataka <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Mysuru Development <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Wildlife Conservation <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">National Zoo Conference 2023 <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Karnataka Politics <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Public Service <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">BJP Karnataka <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Mysuru Development <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Wildlife Conservation <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">National Zoo Conference 2023 <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Karnataka Politics <span class="marquee-sep">&#10022;</span></span>
-    <span class="marquee-item">Public Service <span class="marquee-sep">&#10022;</span></span>
+    <span class="marquee-item">BJP Karnataka <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Mysuru Development <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Wildlife Conservation <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">National Zoo Conference 2023 <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Karnataka Politics <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Public Service <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">BJP Karnataka <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Mysuru Development <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Wildlife Conservation <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">National Zoo Conference 2023 <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Karnataka Politics <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Public Service <span class="marquee-sep">✦</span></span>
   </div>
 </div>
+
+<!-- About -->
 <section class="about-section" id="about">
   <div class="section-header reveal">
     <div class="section-tag">01 / Profile</div>
@@ -190,14 +211,14 @@
     <div class="about-image-container reveal">
       <div class="about-image-frame">
         <img src="https://yt3.ggpht.com/ytc/AIdro_nnIRUmuuO6W_tIk9D-YmL6t0uNruYgC8TeTjvYqXKl6c9FXiAP47jKyuLrHos6hE_DZw=s800-c-k-c0x00ffffff-no-rj" alt="Jyothi Rechanna" onerror="this.style.display='none'">
-        <div class="about-image-label">Karnataka &middot; Bharat</div>
+        <div class="about-image-label">Karnataka · Bharat</div>
       </div>
       <div class="accent-box"></div>
     </div>
     <div class="about-content reveal">
-      <p class="about-lead">A <em>committed BJP leader</em> working tirelessly for the people of Karnataka &mdash; especially the citizens of Mysuru.</p>
-      <p class="about-body">Jyothi Rechanna has emerged as a dedicated political figure within the Bharatiya Janata Party in Karnataka, championing the values of environmental conservation and grassroots development. With deep ties to the Mysuru region, she has consistently advocated for policies that uplift communities while contributing to Karnataka&#39;s progress.</p>
-      <p class="about-body">Her digital presence &mdash; documented through her YouTube channel &mdash; reflects a commitment to transparency and outreach, sharing on-the-ground political activities, wildlife engagements, and interactions with senior BJP leadership including former Chief Minister B.S. Yediyurappa.</p>
+      <p class="about-lead">A <em>committed BJP leader</em> working tirelessly for the people of Karnataka — especially the citizens of Mysuru.</p>
+      <p class="about-body">Jyothi Rechanna has emerged as a dedicated political figure within the Bharatiya Janata Party in Karnataka, championing the values of environmental conservation and grassroots development. With deep ties to the Mysuru region, she has consistently advocated for policies that uplift communities while contributing to Karnataka's progress.</p>
+      <p class="about-body">Her digital presence — documented through her YouTube channel — reflects a commitment to transparency and outreach, sharing on-the-ground political activities, wildlife engagements, and interactions with senior BJP leadership including former Chief Minister B.S. Yediyurappa.</p>
       <div class="affiliation-list">
         <span class="affiliation-tag"><span class="dot"></span>BJP Karnataka</span>
         <span class="affiliation-tag"><span class="dot"></span>Mysuru District</span>
@@ -207,21 +228,27 @@
     </div>
   </div>
 </section>
+
+<!-- Quote Bar -->
 <div class="highlight-bar">
-  <div class="highlight-quote">&ldquo;Serving Karnataka&#39;s people is not a duty &mdash; it is a calling rooted in love for this land and its people.&rdquo;</div>
-  <div class="highlight-attr">&mdash; Jyothi Rechanna</div>
+  <div class="highlight-quote">"Serving Karnataka's people is not a duty — it is a calling rooted in love for this land and its people."</div>
+  <div class="highlight-attr">— Jyothi Rechanna</div>
 </div>
+
+<!-- Videos -->
 <section class="videos-section" id="videos">
   <div class="section-header reveal">
-    <div class="section-tag">02 / YouTube &middot; Live Data</div>
+    <div class="section-tag">02 / YouTube · Live Data</div>
     <h2 class="section-title">Featured<br>Videos</h2>
     <p class="section-subtitle">Selected content from the official YouTube channel, pulled via API.</p>
   </div>
   <div class="videos-grid" id="videosGrid"></div>
   <div style="text-align:center;margin-top:3rem;" class="reveal">
-    <a href="https://www.youtube.com/@jyothirechanna" target="_blank" class="btn-outline">View All 51 Videos on YouTube &#8599;</a>
+    <a href="https://www.youtube.com/@jyothirechanna" target="_blank" class="btn-outline">View All 51 Videos on YouTube ↗</a>
   </div>
 </section>
+
+<!-- Initiatives -->
 <section class="initiatives-section" id="initiatives">
   <div class="section-header reveal">
     <div class="section-tag">03 / Focus Areas</div>
@@ -229,48 +256,50 @@
   </div>
   <div class="initiatives-grid reveal">
     <div class="initiative-card">
-      <span class="initiative-icon">&#128024;</span>
-      <div class="initiative-title">Wildlife &amp; Zoo Conservation</div>
+      <span class="initiative-icon">🐘</span>
+      <div class="initiative-title">Wildlife & Zoo Conservation</div>
       <div class="initiative-desc">Active involvement in Mysuru Zoo affairs and the National Zoo Directors Conference 2023. Advocacy for wildlife conservation directly aligns politics with environmental responsibility.</div>
       <div class="initiative-tag">National Zoo Conference Host</div>
     </div>
     <div class="initiative-card">
-      <span class="initiative-icon">&#127963;</span>
+      <span class="initiative-icon">🏛️</span>
       <div class="initiative-title">BJP Karnataka Politics</div>
-      <div class="initiative-desc">Deeply integrated with BJP&#39;s Karnataka unit &mdash; maintaining ties with senior leadership including BSY and State President Vijendra Singh, participating in party activities and state-level campaigns.</div>
+      <div class="initiative-desc">Deeply integrated with BJP's Karnataka unit — maintaining ties with senior leadership including BSY and State President Vijendra Singh, participating in party activities and state-level campaigns.</div>
       <div class="initiative-tag">Active Party Member</div>
     </div>
     <div class="initiative-card">
-      <span class="initiative-icon">&#127750;</span>
+      <span class="initiative-icon">🌆</span>
       <div class="initiative-title">Mysuru Development</div>
-      <div class="initiative-desc">Representing Mysuru&#39;s aspirations &mdash; fostering a vision of modern Mysuru that honours its royal heritage while driving forward infrastructure and civic progress.</div>
+      <div class="initiative-desc">Representing Mysuru's aspirations — fostering a vision of modern Mysuru that honours its royal heritage while driving forward infrastructure and civic progress.</div>
       <div class="initiative-tag">Mysuru City Focus</div>
     </div>
     <div class="initiative-card">
-      <span class="initiative-icon">&#128241;</span>
+      <span class="initiative-icon">📱</span>
       <div class="initiative-title">Digital Outreach</div>
-      <div class="initiative-desc">Pioneering transparent political communication through YouTube &mdash; 51 videos, 35,800+ total views, reaching constituents directly with ground-level content and activities.</div>
+      <div class="initiative-desc">Pioneering transparent political communication through YouTube — 51 videos, 35,800+ total views, reaching constituents directly with ground-level content and activities.</div>
       <div class="initiative-tag">35,877 Total Views</div>
     </div>
     <div class="initiative-card">
-      <span class="initiative-icon">&#129309;</span>
+      <span class="initiative-icon">🤝</span>
       <div class="initiative-title">Senior Leadership Engagement</div>
       <div class="initiative-desc">Regular interactions with senior BJP leaders, including former CM B.S. Yediyurappa and State President Vijendra Singh, reinforcing grassroots connections to national party leadership.</div>
-      <div class="initiative-tag">BSY &middot; Vijendra Singh</div>
+      <div class="initiative-tag">BSY · Vijendra Singh</div>
     </div>
     <div class="initiative-card">
-      <span class="initiative-icon">&#127470;&#127475;</span>
-      <div class="initiative-title">National Pride &amp; Culture</div>
-      <div class="initiative-desc">Active participation in national celebrations and events &mdash; affirming commitment to India&#39;s cultural identity and national pride across Karnataka&#39;s communities.</div>
+      <span class="initiative-icon">🇮🇳</span>
+      <div class="initiative-title">National Pride & Culture</div>
+      <div class="initiative-desc">Active participation in national celebrations and events — affirming commitment to India's cultural identity and national pride across Karnataka's communities.</div>
       <div class="initiative-tag">Cultural Advocacy</div>
     </div>
   </div>
 </section>
+
+<!-- Footer -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo">Jyothi Rechanna</div>
-      <p class="footer-tagline">BJP Political Leader, Karnataka. Committed to wildlife, public service, and Mysuru&#39;s development.</p>
+      <p class="footer-tagline">BJP Political Leader, Karnataka. Committed to wildlife, public service, and Mysuru's development.</p>
     </div>
     <div>
       <div class="footer-col-title">Quick Links</div>
@@ -283,39 +312,63 @@
     <div>
       <div class="footer-col-title">Connect</div>
       <ul class="footer-links">
-        <li><a href="https://www.youtube.com/@jyothirechanna" target="_blank">YouTube Channel &#8599;</a></li>
+        <li><a href="https://www.youtube.com/@jyothirechanna" target="_blank">YouTube Channel ↗</a></li>
+        <li><a href="https://www.youtube.com/channel/UCT9f8KnrUmAHZs6Sh-t_-GA" target="_blank">Channel ID ↗</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>&copy; 2024 Jyothi Rechanna &middot; Political Legacy Website</div>
-    <div><span style="color:#FF0000">&#9654;</span> Data sourced via YouTube API through Composio</div>
+    <div>© 2024 Jyothi Rechanna · Political Legacy Website</div>
+    <div class="footer-yt"><span style="color:#FF0000">▶</span> Data sourced via YouTube API through Composio</div>
   </div>
 </footer>
+
 <script>
+  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
     setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
   });
+
+  // Videos: removed temples (Sringeri, Annapoorneshwari, Jai Shree Ram, Belur Hassan),
+  // car racing championship, make life brighter, terminal airport 2, visited baby elephant
   const videosData = [
-    { id: "MUq7ZMym8AU", title: "With BSY Appaji - BJP Karnataka", views: 296, likes: 19, date: "2024-01-26", thumb: "https://i.ytimg.com/vi/MUq7ZMym8AU/hqdefault.jpg" },
-    { id: "t1LfV0-VUYw", title: "Cheetahs Cubs - Zoo Wildlife Karnataka", views: 89, likes: 16, date: "2024-01-24", thumb: "https://i.ytimg.com/vi/t1LfV0-VUYw/hqdefault.jpg" },
-    { id: "Nd5IwHLj3s4", title: "National Conference for Zoo Directors - Mysuru Zoo", views: 1890, likes: 45, date: "2024-01-02", thumb: "https://i.ytimg.com/vi/Nd5IwHLj3s4/hqdefault.jpg" },
+    { id: "MUq7ZMym8AU", title: "With BSY Appaji ✨ #bjp #karnataka #narendramodi", views: 296, likes: 19, date: "2024-01-26", thumb: "https://i.ytimg.com/vi/MUq7ZMym8AU/hqdefault.jpg" },
+    { id: "t1LfV0-VUYw", title: "Cheetahs Cubs ✨🌟 #zoo #animals #wildlife #karnataka", views: 89, likes: 16, date: "2024-01-24", thumb: "https://i.ytimg.com/vi/t1LfV0-VUYw/hqdefault.jpg" },
+    { id: "Nd5IwHLj3s4", title: "National Conference for Zoo Directors #mysorezoo #mysore", views: 1890, likes: 45, date: "2024-01-02", thumb: "https://i.ytimg.com/vi/Nd5IwHLj3s4/hqdefault.jpg" },
     { id: "kxCq1PmJCQU", title: "Honoring Excellence: Felicitating Achievers at National Zoo Conference", views: 1240, likes: 32, date: "2024-01-02", thumb: "https://i.ytimg.com/vi/kxCq1PmJCQU/hqdefault.jpg" },
-    { id: "XPsBQcxSJjw", title: "BJP State President Vijendra Sir - Karnataka", views: 870, likes: 29, date: "2024-01-06", thumb: "https://i.ytimg.com/vi/XPsBQcxSJjw/hqdefault.jpg" }
+    { id: "XPsBQcxSJjw", title: "BJP State President Vijendra Sir #bjp #karnataka #banglore", views: 870, likes: 29, date: "2024-01-06", thumb: "https://i.ytimg.com/vi/XPsBQcxSJjw/hqdefault.jpg" },
   ];
+
   videosData.sort((a, b) => b.views - a.views);
+
   const grid = document.getElementById('videosGrid');
   videosData.forEach((v, i) => {
     const card = document.createElement('div');
     card.className = 'video-card reveal';
     card.style.transitionDelay = (i * 0.1) + 's';
-    card.innerHTML = '<div class="video-thumb"><img src="' + v.thumb + '" alt="' + v.title + '" loading="lazy" onerror="this.parentElement.style.background='#1A2340'"><div class="play-overlay"><div class="play-btn">&#9654;</div></div></div><div class="video-info"><div class="video-title">' + v.title + '</div><div class="video-meta"><div class="video-stats"><span class="view-count">&#128065; ' + v.views.toLocaleString() + '</span><span>&#10084; ' + v.likes + '</span></div><div class="video-date">' + v.date + '</div></div></div>';
+    card.innerHTML = `
+      <div class="video-thumb">
+        <img src="${v.thumb}" alt="${v.title}" loading="lazy" onerror="this.parentElement.style.background='#1A2340'">
+        <div class="play-overlay"><div class="play-btn">▶</div></div>
+      </div>
+      <div class="video-info">
+        <div class="video-title">${v.title}</div>
+        <div class="video-meta">
+          <div class="video-stats">
+            <span class="view-count">👁 ${v.views.toLocaleString()}</span>
+            <span>❤ ${v.likes}</span>
+          </div>
+          <div class="video-date">${v.date}</div>
+        </div>
+      </div>`;
     card.addEventListener('click', () => window.open('https://www.youtube.com/watch?v=' + v.id, '_blank'));
     grid.appendChild(card);
   });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
